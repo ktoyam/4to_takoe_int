@@ -48,6 +48,7 @@ class MainPanel extends JPanel {
         JButton btn = new JButton("TRY!");
         JTextArea txt = new JTextArea(1,6);
         JTextField counts = new JTextField("Tries: " + _tries);
+        counts.setEditable(false);
 
         btn.addActionListener(new ActionListener() {
             @Override
@@ -60,11 +61,10 @@ class MainPanel extends JPanel {
                     if(_tries>1){
                         _tries--;
                         counts.setText("Tries: "+ _tries );
-                        repaint();
-
+                        JOptionPane.showMessageDialog(null, "My number is " + (Integer.parseInt(_num)>Integer.parseInt(txt.getText()) ? "bigger" : "less") + " than yours");
                     }
                     else{
-                        JOptionPane.showMessageDialog(null, "U have 0 tries, gl next time!");
+                        JOptionPane.showMessageDialog(null, "U have 0 tries, gl next time! Number was: " + _num);
                         System.exit(0);
                     }
                 }
