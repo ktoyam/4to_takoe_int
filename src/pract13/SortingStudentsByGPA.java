@@ -32,4 +32,13 @@ public class SortingStudentsByGPA implements Comparator<Student> {
     public static void quickSortByGPA(Student[] array){
         quickSortByGPA_r(array, 0, array.length-1);
     }
+
+    public static Student[] MergeAndSort(Student[] array1, Student[] array2){
+        Student[] res = new Student[array1.length+ array2.length];
+        int i;
+        for(i = 0;i<array1.length;i++) res[i] = array1[i];
+        for(int j = 0; j<array2.length;j++,i++) res[i] = array2[j];
+        quickSortByGPA(res);
+        return res;
+    }
 }
