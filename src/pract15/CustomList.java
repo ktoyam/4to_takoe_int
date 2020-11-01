@@ -42,6 +42,27 @@ public class CustomList<T> {
         count++;
     }
 
+    public void addBegin(T element){
+        add(element, 0);
+    }
+
+    public void addEnd(T element){
+        add(element, count);
+    }
+
+    public void add(T element, int index) {
+        ensureCapacity(count + 1);
+        if (index == count) {
+            dataArray[count] = element;
+            return;
+        }
+        for (int i = count; i > index; i--) {
+            dataArray[i] = dataArray[i - 1];
+        }
+        dataArray[index] = element;
+        count++;
+    }
+
     public void addArray(T[] elements){
         ensureCapacity(count+elements.length);
         for(int i =0;i<elements.length;i++, count++){
