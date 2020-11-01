@@ -46,14 +46,11 @@ public class CustomList<T> {
         add(element, 0);
     }
 
-    public void addEnd(T element){
-        add(element, count);
-    }
-
     public void add(T element, int index) {
         ensureCapacity(count + 1);
         if (index == count) {
             dataArray[count] = element;
+            count++;
             return;
         }
         for (int i = count; i > index; i--) {
@@ -78,9 +75,8 @@ public class CustomList<T> {
     public void remove(int index){
         if(!checkIndex(index)) throw new IndexOutOfBoundsException("index");
         count--;
-        int i = index;
-        while(i<count){
-            dataArray[i++] = dataArray[i++];
+        for(int i = index; i<count;i++){
+            dataArray[i] = dataArray[i+1];
         }
     }
 

@@ -6,7 +6,8 @@ public class CustomListTests {
         t.add("first");
         t.add("second");
         t.addArray(new String[] {"third", "fourth"});
-        t.add("fifth");
+        t.addBegin("fifth");
+        t.add("ended");
         t.remove(3);
         System.out.println(t.get(1));
         System.out.println("Count: " + t.getCount());
