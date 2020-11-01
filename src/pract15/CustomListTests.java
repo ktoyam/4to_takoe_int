@@ -9,6 +9,7 @@ public class CustomListTests {
         t.addBegin("fifth");
         t.add("ended");
         t.remove(3);
+        t.removeLast();
         System.out.println(t.get(1));
         System.out.println("Count: " + t.getCount());
         System.out.println("Capacity: " + t.getCapacity());

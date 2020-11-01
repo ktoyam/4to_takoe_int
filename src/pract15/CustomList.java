@@ -80,6 +80,10 @@ public class CustomList<T> {
         }
     }
 
+    public void removeLast(){
+        remove(count-1);
+    }
+
     @Override
     public String toString() {
         if(count == 0) return "[]";
