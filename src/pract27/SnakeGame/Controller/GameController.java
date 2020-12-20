@@ -18,12 +18,12 @@ public class GameController {
     private final Random rand;
     public final int width = 20;
     public final int height = 20;
-    public final int borders = 2;
+    public final int borders = 0;
     private final int maxFruits = 3;
     private final int speedMulti = 250;
     private final int defaultSnakeLength = 4;
     private final Point startPoint = new Point(5,5);
-    private final int maxFruitStr = 4;
+    private final int maxFruitStr = 3;
     private Direction direction;
     private final AreaListener areaListener;
     private final JLabel score;

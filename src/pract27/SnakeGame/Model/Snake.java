@@ -1,5 +1,6 @@
 package pract27.SnakeGame.Model;
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -7,6 +8,8 @@ public class Snake {
     private final ArrayList<Point> points;
     private Point currentPos;
     private final AreaListener areaListener;
+
+    private final boolean hardcorde = true;
 
     public Point getDirdiff() {
         return dirdiff;
@@ -48,7 +51,11 @@ public class Snake {
     private void removeCollision() {
         for (int i = points.size() - 2; i >= 0; i--) {
             if (points.get(i).equals(currentPos)) {
-                i-=2;
+                if(hardcorde){
+                    JOptionPane.showMessageDialog(null, "U lost ;(");
+                    System.exit(2);
+                }
+                i--;
                 for (; i >= 0; i--) {
                     removePoint(i);
                 }
